@@ -5,13 +5,27 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
+
+// Define enums!
+enum cow_purpose {
+    dairy,
+    meat,
+    hide,
+    pet
+};
 
 struct cow{
-    string name;
+    std::string name;
     int age;
+    // Each char defines a purpose or action of the cow
     unsigned char purpose;
 };
 int main(){
+    cow my_cow;
+    my_cow.age = 5;
+    my_cow.name = "Betsy";
+    my_cow.purpose = cow_purpose::meat;
+
+    std::cout << my_cow.purpose << std::endl;
     return (0);
 }
