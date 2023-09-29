@@ -4,35 +4,11 @@
 
 #include <iostream>
 #include <string>
+#include "cow.h"
 
 using namespace std;
 
-enum cow_purpose {dairy, meat, hide, pet};
 
-class cow{
-public:
-    cow(string name_i, int age_i, unsigned char purpose_i){
-        name = name_i;
-        age = age_i;
-        purpose = purpose_i;
-    }
-    string get_name(){
-        return name;
-    }
-    int get_age(){
-        return age;
-    }
-    unsigned char get_purpose(){
-        return purpose;
-    }
-    void set_age(int new_age){
-        age = new_age;
-    }
-private:
-    string name;
-    int age;
-    unsigned char purpose;
-};
 
 int main(){
     cow my_cow("Hildy",7,pet);
