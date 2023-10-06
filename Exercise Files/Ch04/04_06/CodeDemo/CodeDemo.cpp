@@ -49,6 +49,9 @@ int main(){
 			credits += courses[j].get_credits();
 			points += num_grd * courses[j].get_credits();
 		}
+
+    cout << points << endl;
+    cout << credits << endl;
 	GPA = points / credits;
 
 	string student_str;

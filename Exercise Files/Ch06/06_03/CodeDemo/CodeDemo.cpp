@@ -3,16 +3,16 @@
 // Upgrade to work with files, by Eduardo Corpeño 
 
 #include <iostream>
-#include <vector>
 #include "records.h"
+#include "FileReader.h"
 
 using namespace std;
 
 void initialize();
 
+
 StudentRecords SR;
 int id;
-
 int main(){
 	initialize();
 
@@ -25,18 +25,10 @@ int main(){
 }
 
 void initialize(){
-	SR.add_student(1, "George P. Burdell");
-	SR.add_student(2,"Nancy Rhodes");
-
-	SR.add_course(1, "Algebra", 5);
-	SR.add_course(2, "Physics", 4);
-	SR.add_course(3, "English", 3);
-	SR.add_course(4,"Economics",4);
-
-	SR.add_grade(1, 1, 'B');
-	SR.add_grade(1, 2, 'A');
-	SR.add_grade(1, 3, 'C');
-	SR.add_grade(2, 1, 'A');
-	SR.add_grade(2, 2, 'A'); 
-	SR.add_grade(2, 4, 'B');
+    FileReader read_students_text_file("students.txt",SR);
+    read_students_text_file.add_student_from_file();
+    FileReader read_courses_text_file("courses.txt",SR);
+    read_courses_text_file.add_course_from_file();
+    FileReader read_grades_text_file("grades.txt",SR);
+    read_grades_text_file.add_grade_from_file();
 }

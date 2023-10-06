@@ -8,35 +8,36 @@
 
 using namespace std;
 
-vector<Student> students = {Student(1,"George P. Burdell"),
-							Student(2,"Nancy Rhodes")};
+void initialize();
 
-vector<Course> courses = {Course(1,"Algebra",5),
-						  Course(2,"Physics",4),
-						  Course(3,"English",3),
-						  Course(4,"Economics",4)};
-
-vector<Grade> grades = {Grade(1,1,'B'),	Grade(1,2,'A'),	Grade(1,3,'C'),
-						Grade(2,1,'A'),	Grade(2,2,'A'), Grade(2,4,'B')};
-
-float GPA = 0.0f;
+StudentRecords SR;
 int id;
 
 int main(){
+    initialize();
+
 	cout << "Enter a student ID: ";
 	cin >> id;
 
-	float points = 0.0f, credits = 0.0f;
-	for (Grade& grd : grades)
-		if (grd.get_student_id() == sid){
-			// get numeric grade
-			// calculate total credits and points
-			// credits += get credits
-			points += num_grd * courses[j].get_credits();
-		}
-	GPA = points / credits;
-
+    string student_str = SR.get_student_name(id);
 	// get student name
-	cout << "The GPA for " << student_str << " is " << GPA << endl;
+	cout << "The GPA for " << student_str << " is " << SR.get_GPA(id) << endl;
 	return (0);
+}
+
+void initialize(){
+    SR.add_student(1, "George P. Burdell");
+    SR.add_student(2, "Nancy Rhodes");
+
+    SR.add_course(1, "Algebra", 5);
+    SR.add_course(2, "Physics", 4);
+    SR.add_course(3, "English", 3);
+    SR.add_course(4, "Economics", 4);
+
+    SR.add_grade(1, 1, 'B');
+    SR.add_grade(1, 2, 'A');
+    SR.add_grade(1, 3, 'C');
+    SR.add_grade(2, 1, 'A');
+    SR.add_grade(2, 2, 'A');
+    SR.add_grade(2, 4, 'B');
 }

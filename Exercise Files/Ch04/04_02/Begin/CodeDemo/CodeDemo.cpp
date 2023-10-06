@@ -18,6 +18,23 @@ int main(){
     cin >> operation;
 
     // switch goes here
+    switch (operation) {
+        case '+':
+            result = operand_1 + operand_2;
+            break;
+        case '-':
+            result = operand_1 - operand_2;
+            break;
+        case '*':
+            result = operand_1 * operand_2;
+            break;
+        case '/':
+            result = operand_1 * operand_2;
+            break;
+        default:
+            result = operand_1 + operand_2;
+            break;
+    }
 
     cout << "The result is " << result << endl;
     return (0);

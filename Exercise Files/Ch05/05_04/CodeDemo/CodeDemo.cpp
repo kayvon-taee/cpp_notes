@@ -10,6 +10,12 @@ using namespace std;
 
 void initialize();
 
+/**
+ * Create function in StudentRecords
+ * Receive student ID and print report card
+ * Print student name, course name, letter grades and GPA
+ */
+
 StudentRecords SR;
 int id;
 
